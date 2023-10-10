@@ -1,0 +1,144 @@
+.btnContainer {
+  position: fixed;
+  bottom: 0;
+}
+
+.btnOrder {
+  width: 50vw;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  bottom: 0;
+}
+
+.orderContainer {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+}
+.orderContainer p {
+  font-size: 3rem;
+}
+.ingredientContainer {
+  display: grid;
+  grid-template-columns: 6.5fr 3fr 0.5fr;
+  width: 100%;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .ingredientContainer {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    width: 100%;
+  }
+}
+.ingredientName {
+  border: 0px;
+  border-bottom: 1px;
+  border-color: #000;
+  border-style: solid;
+  padding: 1.5rem;
+}
+
+.ingredientQuantity {
+  background: none;
+  border: 0px;
+  border-left: 1px solid rgb(0, 0, 0, 0.2);
+  border-bottom: 1px solid #000;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  touch-action: none;
+}
+.vegetables {
+  background: url('./../../../public/images/vegetables.jpg') center right repeat;
+}
+.vegetables::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6),
+    rgba(175, 255, 168, 0.9)
+  );
+}
+
+.meat {
+  background: url('./../../../public/images/meat.jpg') center center repeat;
+}
+.meat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 184, 184, 0.9)
+  );
+}
+
+.fish {
+  background: url('./../../../public/images/fish.jpg') center center repeat;
+}
+
+.fish::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6),
+    rgba(184, 219, 255, 0.8)
+  );
+}
+.spices {
+  background: url('./../../../public/images/spices.jpg') center center repeat;
+}
+
+.spices::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 248, 184, 0.8)
+  );
+}
+.misc {
+  background: url('./../../../public/images/misc.jpg') center center repeat;
+}
+
+.misc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.unit {
+  border: 0px;
+  border-bottom: 1px;
+  border-color: #000;
+  border-style: solid;
+  padding: 1.5rem 0;
+  font-weight: 300;
+}

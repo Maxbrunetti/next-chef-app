@@ -1,0 +1,149 @@
+.addRecipeForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.addRecipeForm input,
+.addRecipeForm select {
+  display: flex;
+  width: 80vw;
+  height: 4rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+.addRecipeForm textarea {
+  display: flex;
+  width: 80vw;
+  min-height: 10rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+}
+
+.addRecipeForm label {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.formGroup {
+  margin: 2.5rem 0;
+}
+.formGroup .label {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.ingredientInput {
+  display: grid;
+  grid-template-areas: 'ingredient weight type';
+  grid-template-columns: 4fr 3fr 3fr;
+  padding: 0.1rem 0;
+  margin: 1rem 0;
+}
+
+.ingredientInput input {
+  width: auto;
+  margin: 0.1rem 0;
+  border-radius: 1rem;
+}
+.ingredientInput select {
+  height: 4rem;
+  display: flex;
+  width: 100%;
+  margin: 0.1rem 0;
+  border-radius: 1rem;
+}
+.addRecipeForm p {
+  font-size: 2rem;
+}
+option {
+  color: red;
+}
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: red;
+}
+
+.btnRecipe {
+  width: 100vw;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.recipesListContainer {
+  background: url('./../assets/recipes.jpg') center left repeat;
+}
+.recipesListContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
+  );
+}
+
+.recipesList {
+  width: 80vw;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.recipesContainer {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--dark-color);
+  border-radius: 1rem;
+  margin: 1rem 0;
+  padding: 1.5rem 0;
+}
+
+.recipesContainer a {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.recipeSelected {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.recipeSelected .details {
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+.recipeSelected .instructions {
+  text-align: left;
+  padding: 2rem 2rem;
+  white-space: pre-line;
+}
+
+.formCheckbox span {
+  font-size: 2rem;
+}
+
+.chakra-checkbox__input,
+.chakra-checkbox__control {
+  border: 1px solid var(--dark-color);
+  height: 2rem !important;
+  width: 2rem !important;
+  margin-left: 2rem !important;
+}
+
+.checkboxContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
