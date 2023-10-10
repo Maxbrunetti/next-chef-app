@@ -1,4 +1,4 @@
-import { Recipe, Ingredient } from '../store/recipes-slice';
+import { Recipe, Ingredient } from '../app/GlobalRedux/Recipes/recipes-slice';
 
 interface IngredientList {
   vegetables: string[];

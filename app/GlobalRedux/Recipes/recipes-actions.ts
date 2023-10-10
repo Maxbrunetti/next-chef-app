@@ -1,3 +1,5 @@
+'use client';
+
 import { recipesActions, RecipesSliceState } from './recipes-slice';
 const apiKey = process.env.REACT_APP_FIREBASE_DATABASE;
 
@@ -36,7 +38,7 @@ export function fetchUserData() {
           recipeSelected: userData.recipeSelected,
           ingredients: userData.ingredients,
           order: userData.order,
-        })
+        }),
       );
     } catch (err) {
       console.log(err);

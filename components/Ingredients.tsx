@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, recipesActions } from '../store/recipes-slice';
+import { RootState } from '../app/GlobalRedux/store';
+import { recipesActions } from '../app/GlobalRedux/Recipes/recipes-slice';
 
 function Ingredients() {
   const dispatch = useDispatch();

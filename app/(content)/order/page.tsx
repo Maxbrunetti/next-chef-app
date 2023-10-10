@@ -1,10 +1,11 @@
 'use client';
-import './order.module.css';
+// import './order.module.css';
 import Popup from 'reactjs-popup';
 import capitalizeAndAddSpaces from '../../../utils/capitalizeAndAddSpaces';
 import Ingredients from '../../../components/Ingredients';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, recipesActions } from '../../../store/recipes-slice';
+import { RootState } from '../../GlobalRedux/store';
+import { recipesActions } from '../../GlobalRedux/Recipes/recipes-slice';
 function Order() {
   const popupBody: any = (close: () => void) => (
     <div className="confirmDeleteContainer">

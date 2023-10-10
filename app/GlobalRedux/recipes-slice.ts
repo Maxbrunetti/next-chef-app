@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import updateUserIngredients from '../utils/updateUserIngredients';
-import { convertArrayIntoKeyValue } from '../utils/convertArraysIntoKeyValue';
+'use client';
 
+import { createSlice } from '@reduxjs/toolkit';
+import { convertArrayIntoKeyValue } from './../../utils/convertArraysIntoKeyValue';
+import updateUserIngredients from './../../utils/updateUserIngredients';
 export interface Ingredient {
   list: string;
   ingredient: string;
@@ -66,7 +67,7 @@ const recipesSlice = createSlice({
     },
     editRecipe(state: any, action: any) {
       const recipeIndex = state.recipes.findIndex(
-        (recipe: Recipe) => recipe.name === action.payload.recipeName
+        (recipe: Recipe) => recipe.name === action.payload.recipeName,
       );
       const updatedRecipe = action.payload.recipe;
       state.recipes[recipeIndex] = updatedRecipe;
@@ -75,7 +76,7 @@ const recipesSlice = createSlice({
     },
     deleteRecipe(state: any, action: any) {
       const recipeIndex = state.recipes.findIndex(
-        (recipe: Recipe) => recipe.name === action.payload
+        (recipe: Recipe) => recipe.name === action.payload,
       );
       state.recipes.splice(recipeIndex, 1);
       state.ingredients = updateUserIngredients(state.recipes);

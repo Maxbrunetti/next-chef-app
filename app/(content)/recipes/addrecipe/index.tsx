@@ -14,12 +14,13 @@ import {
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+
 import {
   Recipe,
-  RootState,
   Ingredient,
   recipesActions,
-} from '../../../../store/recipes-slice';
+} from '../../../GlobalRedux/Recipes/recipes-slice';
+import { RootState } from '../../../GlobalRedux/store';
 
 function AddRecipes() {
   const recipes = useSelector((state: RootState) => state.recipes.recipes);
