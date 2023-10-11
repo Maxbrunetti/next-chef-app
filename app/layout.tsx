@@ -1,4 +1,5 @@
 import './globals.css';
+import { store } from './GlobalRedux/store';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Providers } from './GlobalRedux/provider';

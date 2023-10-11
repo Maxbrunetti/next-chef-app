@@ -23,7 +23,7 @@ function Recipes() {
           .map((recipe: Recipe) => (
             <div className={styles.recipesContainer} key={recipe.name}>
               <Link
-                href="/recipeselected"
+                href={`/recipes/` + recipe.name}
                 onClick={(e: any) => {
                   dispatch(recipesActions.selectRecipe<any>(e.target.text));
                 }}
