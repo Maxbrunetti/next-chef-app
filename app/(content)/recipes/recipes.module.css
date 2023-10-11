@@ -58,7 +58,7 @@
 .addRecipeForm p {
   font-size: 2rem;
 }
-option {
+.styles option {
   color: red;
 }
 .errorMessage {
@@ -75,7 +75,7 @@ option {
 }
 
 .recipesListContainer {
-  background: url('./../assets/recipes.jpg') center left repeat;
+  background: url('./../../../public/assets/recipes.jpg') center left repeat;
 }
 .recipesListContainer::before {
   content: '';

@@ -1,5 +1,6 @@
 'use client';
-// import './order.module.css';
+import './../../globals.css';
+import styles from './page.module.css';
 import Popup from 'reactjs-popup';
 import capitalizeAndAddSpaces from '../../../utils/capitalizeAndAddSpaces';
 import Ingredients from '../../../components/Ingredients';
@@ -8,13 +9,13 @@ import { RootState } from '../../GlobalRedux/store';
 import { recipesActions } from '../../GlobalRedux/Recipes/recipes-slice';
 function Order() {
   const popupBody: any = (close: () => void) => (
-    <div className="confirmDeleteContainer">
+    <div className={'confirmDeleteContainer'}>
       <p style={{ fontWeight: 600 }}>
         Are you sure you want to clear all orders?
       </p>
       <div>
         <button
-          className="btn btnDelete"
+          className={'btn btnDelete'}
           onClick={(e) => {
             clearOrder();
             close();
@@ -57,19 +58,19 @@ function Order() {
       <Ingredients />
       <div className="containerBtnDelete">
         <Popup
-          trigger={<button className="btn btnDelete">Clear Order</button>}
+          trigger={<button className={'btn btnDelete'}>Clear Order</button>}
           modal
           nested
         >
           {popupBody}
         </Popup>
       </div>
-      <div className="btnContainer">
-        <button className="btn btnOrder" onClick={copyList}>
+      <div className={styles.btnContainer}>
+        <button className="btn btnBottom" onClick={copyList}>
           Copy
         </button>
         <button
-          className="btn btnOrder"
+          className="btn btnBottom"
           onClick={() => {
             dispatch(recipesActions.changeList());
           }}

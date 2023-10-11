@@ -49,7 +49,7 @@
   touch-action: none;
 }
 .vegetables {
-  background: url('./../../../public/images/vegetables.jpg') center right repeat;
+  background: url('./../../../public/assets/vegetables.jpg') center right repeat;
 }
 .vegetables::before {
   content: '';
@@ -66,7 +66,7 @@
 }
 
 .meat {
-  background: url('./../../../public/images/meat.jpg') center center repeat;
+  background: url('./../../../public/assets/meat.jpg') center center repeat;
 }
 .meat::before {
   content: '';
@@ -83,7 +83,7 @@
 }
 
 .fish {
-  background: url('./../../../public/images/fish.jpg') center center repeat;
+  background: url('./../../../public/assets/fish.jpg') center center repeat;
 }
 
 .fish::before {
@@ -100,7 +100,7 @@
   );
 }
 .spices {
-  background: url('./../../../public/images/spices.jpg') center center repeat;
+  background: url('./../../../public/assets/spices.jpg') center center repeat;
 }
 
 .spices::before {
@@ -117,7 +117,7 @@
   );
 }
 .misc {
-  background: url('./../../../public/images/misc.jpg') center center repeat;
+  background: url('./../../../public/assets/misc.jpg') center center repeat;
 }
 
 .misc::before {

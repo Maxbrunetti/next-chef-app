@@ -1,4 +1,5 @@
-import './../recipes.module.css';
+'use client';
+import styles from './../recipes.module.css';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
@@ -12,7 +13,7 @@ import {
   Button,
   CheckboxGroup,
 } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -23,9 +24,9 @@ import {
 import { RootState } from '../../../GlobalRedux/store';
 
 function AddRecipes() {
+  const router = useRouter();
   const recipes = useSelector((state: RootState) => state.recipes.recipes);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [recipeForm, setRecipeForm] = useState<Recipe>({
     name: '',
     type: '',
@@ -54,7 +55,7 @@ function AddRecipes() {
 
   function onSubmit() {
     dispatch(recipesActions.addRecipe<any>(recipeForm));
-    navigate('/recipes');
+    // router.push('/recipes');
   }
 
   function addIngredient() {
@@ -69,7 +70,7 @@ function AddRecipes() {
   function newIngredientInput() {
     return recipeForm.ingredients.map((ing: Ingredient, i: number) => (
       <FormControl
-        className="formGroup ingredientInput"
+        className={`${styles.formGroup} ${styles.ingredientInput}`}
         key={'ingredient ' + i}
       >
         <Input
@@ -100,6 +101,7 @@ function AddRecipes() {
           }}
         />
         <Select
+          className={styles.select}
           gridArea={'type'}
           placeholder="Type"
           value={recipeForm.ingredients[i].list}
@@ -123,9 +125,12 @@ function AddRecipes() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="addRecipeForm">
-      <FormControl isInvalid={Boolean(errors.recipeName)} className="formGroup">
-        <FormLabel htmlFor="recipeName" className="label">
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.addRecipeForm}>
+      <FormControl
+        isInvalid={Boolean(errors.recipeName)}
+        className={styles.formGroup}
+      >
+        <FormLabel htmlFor="recipeName" className={styles.label}>
           Recipe Name
         </FormLabel>
         <Input
@@ -146,12 +151,15 @@ function AddRecipes() {
             setRecipeForm({ ...recipeForm, name: e.target.value })
           }
         />
-        <FormErrorMessage className="errorMessage">
+        <FormErrorMessage className={styles.errorMessage}>
           {/* {errors.recipeName && errors.recipeName.message} */}
         </FormErrorMessage>
       </FormControl>
-      <FormControl isInvalid={Boolean(errors.recipeType)} className="formGroup">
-        <FormLabel htmlFor="recipeType" className="label">
+      <FormControl
+        isInvalid={Boolean(errors.recipeType)}
+        className={styles.formGroup}
+      >
+        <FormLabel htmlFor="recipeType" className={styles.label}>
           Recipe Type
         </FormLabel>
         <Select
@@ -169,12 +177,15 @@ function AddRecipes() {
           <option value="Main">Main</option>
           <option value="Dessert">Dessert</option>
         </Select>
-        <FormErrorMessage className="errorMessage">
+        <FormErrorMessage className={styles.errorMessage}>
           {/* {errors.recipeType && errors.recipeType.message} */}
         </FormErrorMessage>
       </FormControl>
-      <FormControl isInvalid={Boolean(errors.portions)} className="formGroup">
-        <FormLabel htmlFor="portions" className="label">
+      <FormControl
+        isInvalid={Boolean(errors.portions)}
+        className={styles.formGroup}
+      >
+        <FormLabel htmlFor="portions" className={styles.label}>
           Portions
         </FormLabel>
         <Input
@@ -190,12 +201,12 @@ function AddRecipes() {
             setRecipeForm({ ...recipeForm, portions: Number(e.target.value) })
           }
         />
-        <FormErrorMessage className="errorMessage">
+        <FormErrorMessage className={styles.errorMessage}>
           {/* {errors.portions && errors.portions.message} */}
         </FormErrorMessage>
       </FormControl>
-      <FormControl className="formGroup">
-        <FormLabel htmlFor="ingredients" className="label">
+      <FormControl className={styles.formGroup}>
+        <FormLabel htmlFor="ingredients" className={styles.label}>
           Ingredient
         </FormLabel>
         {newIngredientInput()}
@@ -204,14 +215,14 @@ function AddRecipes() {
             addIngredient();
             console.log(recipeForm);
           }}
-          className="btn"
+          className={'btn'}
           style={{ margin: 0 }}
         >
           + Ingredient
         </Button>
       </FormControl>
-      <FormControl className="formGroup">
-        <FormLabel htmlFor="instructions" className="label">
+      <FormControl className={styles.formGroup}>
+        <FormLabel htmlFor="instructions" className={styles.label}>
           Instructions
         </FormLabel>
         <Textarea
@@ -225,8 +236,8 @@ function AddRecipes() {
           }
         />
       </FormControl>
-      <FormControl className="formGroup">
-        <FormLabel htmlFor="allergens" className="label">
+      <FormControl className={styles.formGroup}>
+        <FormLabel htmlFor="allergens" className={styles.label}>
           Allergens & Diet
         </FormLabel>
         <CheckboxGroup
