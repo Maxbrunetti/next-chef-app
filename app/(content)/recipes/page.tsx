@@ -2,8 +2,11 @@
 import styles from './recipes.module.css';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
-import { RootState } from '../../GlobalRedux/recipes-slice';
-import { Recipe, recipesActions } from '../../GlobalRedux/recipes-slice';
+import { RootState } from '../../GlobalRedux/Recipes/recipes-slice';
+import {
+  Recipe,
+  recipesActions,
+} from '../../GlobalRedux/Recipes/recipes-slice';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 function Recipes() {

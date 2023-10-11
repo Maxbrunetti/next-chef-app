@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import Popup from 'reactjs-popup';
 import { useDispatch } from 'react-redux';
 import { RootState } from '../../../GlobalRedux/store';
-import { recipesActions } from '../../../GlobalRedux/recipes-slice';
+import { recipesActions } from '../../../GlobalRedux/Recipes/recipes-slice';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import styles from './../recipes.module.css';
 function RecipeSelected() {

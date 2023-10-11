@@ -9,20 +9,18 @@ import {
   Input,
   Select,
   Textarea,
-  Checkbox,
   Button,
   CheckboxGroup,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
-
 import {
   Recipe,
   Ingredient,
   recipesActions,
 } from '../../../GlobalRedux/Recipes/recipes-slice';
 import { RootState } from '../../../GlobalRedux/store';
-
+import { Checkbox } from '@nextui-org/checkbox';
 function AddRecipes() {
   const router = useRouter();
   const recipes = useSelector((state: RootState) => state.recipes.recipes);
@@ -251,9 +249,9 @@ function AddRecipes() {
               return (
                 <Checkbox
                   className={styles.formCheckbox}
-                  iconSize="2rem"
                   value={type}
                   key={type}
+                  disableAnimation
                 >
                   {type}
                 </Checkbox>
