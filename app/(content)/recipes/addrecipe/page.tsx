@@ -55,7 +55,7 @@ function AddRecipes() {
 
   function onSubmit() {
     dispatch(recipesActions.addRecipe<any>(recipeForm));
-    // router.push('/recipes');
+    router.push('/recipes');
   }
 
   function addIngredient() {
@@ -247,7 +247,7 @@ function AddRecipes() {
           }}
         >
           <div className={styles.checkboxContainer}>
-            {allergensTypes.map((type) => {
+            {allergensTypes.map((type: string) => {
               return (
                 <Checkbox
                   className={styles.formCheckbox}

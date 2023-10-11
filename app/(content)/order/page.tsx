@@ -37,6 +37,7 @@ function Order() {
   const list = useSelector(
     (state: RootState) => state.recipes.lists[currentList],
   );
+
   const order = useSelector((state: RootState) => state.recipes.order);
 
   function clearOrder() {
@@ -54,7 +55,7 @@ function Order() {
   }
 
   return (
-    <section className={`main ${list}`}>
+    <section className={styles[list]}>
       <Ingredients />
       <div className="containerBtnDelete">
         <Popup

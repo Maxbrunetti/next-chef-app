@@ -10,7 +10,7 @@ function Home() {
       <Link className={`btn ${styles.btnHome}`} href="/recipes">
         Recipes
       </Link>
-      <Link className={`btn ${styles.btnHome}`} href="/addrecipes">
+      <Link className={`btn ${styles.btnHome}`} href="/recipes/addrecipe">
         Add Recipes
       </Link>
     </section>
