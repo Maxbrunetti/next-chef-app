@@ -16,7 +16,7 @@ function Order() {
       <div>
         <button
           className={'btn btnDelete'}
-          onClick={(e) => {
+          onClick={() => {
             clearOrder();
             close();
           }}
