@@ -3,7 +3,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import updateUserIngredients from '../../../utils/updateUserIngredients';
 import { convertArrayIntoKeyValue } from '../../../utils/convertArraysIntoKeyValue';
-
+import { sendUserData } from './recipes-actions';
 export interface Ingredient {
   list: string;
   ingredient: string;
@@ -65,6 +65,7 @@ const recipesSlice = createSlice({
       state.recipes.push(newRecipe);
       state.ingredients = updateUserIngredients(state.recipes);
       state.order = convertArrayIntoKeyValue(state.ingredients);
+      sendUserData(state.recipes);
     },
     editRecipe(state: any, action: any) {
       const recipeIndex = state.recipes.findIndex(

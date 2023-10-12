@@ -1,12 +1,12 @@
 'use client';
 
 import { recipesActions, RecipesSliceState } from './recipes-slice';
-const apiKey = process.env.REACT_APP_FIREBASE_DATABASE;
+const apiKey = 'https://the-chef-app-default-rtdb.firebaseio.com/';
 
 export async function sendUserData(userData: RecipesSliceState) {
   try {
     const response = await fetch(apiKey + 'user.json', {
-      method: 'PUT',
+      method: 'POST',
       body: JSON.stringify(userData),
     });
     if (!response.ok) {

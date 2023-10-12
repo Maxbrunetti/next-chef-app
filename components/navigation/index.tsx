@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './index.module.css';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../app/GlobalRedux/recipes-slice';
+import { RootState } from '../../app/GlobalRedux/store';
 import { usePathname } from 'next/navigation';
 
 function Navbar() {

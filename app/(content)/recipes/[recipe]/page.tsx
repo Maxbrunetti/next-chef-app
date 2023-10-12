@@ -80,7 +80,7 @@ function RecipeSelected() {
           </button>
           <button
             className="btn btnBottom"
-            onClick={() => router.push('/editrecipe')}
+            onClick={() => router.push('/recipes/editrecipe')}
           >
             Edit
           </button>
