@@ -60,6 +60,7 @@ function Ingredients() {
     if (windowWidth < desktopScreen) {
       // Mobile
       for (const key in ingredientsList) {
+        // eslint-disable-next-line no-prototype-builtins
         if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
           ingredients.push(
             <div className={styles.orderContainer} key={key}>
@@ -85,6 +86,7 @@ function Ingredients() {
     } else {
       // Desktop
       for (const key in ingredientsList) {
+        // eslint-disable-next-line no-prototype-builtins
         if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
           ingredients.push(
             <div className={styles.orderContainer} key={key}>
