@@ -7,7 +7,11 @@ import Ingredients from '../../../components/Ingredients';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../GlobalRedux/store';
 import { recipesActions } from '../../GlobalRedux/Recipes/recipes-slice';
+import { useEffect } from 'react';
+import { sendUserData } from '../../api/recipes/newRecipe';
+
 function Order() {
+  const order = useSelector((state: RootState) => state.recipes.order);
   const popupBody: any = (close: () => void) => (
     <div className={'confirmDeleteContainer'}>
       <p style={{ fontWeight: 600 }}>
@@ -37,8 +41,6 @@ function Order() {
   const list = useSelector(
     (state: RootState) => state.recipes.lists[currentList],
   );
-
-  const order = useSelector((state: RootState) => state.recipes.order);
 
   function clearOrder() {
     dispatch(recipesActions.clearOrder());

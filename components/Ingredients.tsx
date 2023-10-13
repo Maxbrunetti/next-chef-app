@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../app/GlobalRedux/store';
 import { recipesActions } from '../app/GlobalRedux/Recipes/recipes-slice';
-
+import styles from './../app/(content)/order/page.module.css';
 function Ingredients() {
   const dispatch = useDispatch();
   const order = useSelector((state: RootState) => state.recipes.order);
@@ -62,11 +62,11 @@ function Ingredients() {
       for (const key in ingredientsList) {
         if (ingredientsList.hasOwnProperty(key)) {
           ingredients.push(
-            <div className="orderContainer" key={key}>
-              <div className="ingredientContainer">
-                <p className="ingredientName">{key}</p>
+            <div className={styles.orderContainer} key={key}>
+              <div className={styles.ingredientContainer}>
+                <p className={styles.ingredientName}>{key}</p>
                 <input
-                  className="ingredientQuantity"
+                  className={styles.ingredientQuantity}
                   key={key}
                   id={key}
                   value={order[list][key] + 'kg'}
@@ -87,11 +87,11 @@ function Ingredients() {
       for (const key in ingredientsList) {
         if (ingredientsList.hasOwnProperty(key)) {
           ingredients.push(
-            <div className="orderContainer" key={key}>
-              <div className="ingredientContainer">
-                <p className="ingredientName">{key}</p>
+            <div className={styles.orderContainer} key={key}>
+              <div className={styles.ingredientContainer}>
+                <p className={styles.ingredientName}>{key}</p>
                 <input
-                  className="ingredientQuantity"
+                  className={styles.ingredientQuantity}
                   key={key}
                   id={key}
                   min={0}

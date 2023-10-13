@@ -3,7 +3,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import updateUserIngredients from '../../../utils/updateUserIngredients';
 import { convertArrayIntoKeyValue } from '../../../utils/convertArraysIntoKeyValue';
-import { sendUserData } from './recipes-actions';
+// import { sendUserData } from './recipes-actions';
+import { sendUserData } from '../../api/recipes/newRecipe';
 export interface Ingredient {
   list: string;
   ingredient: string;

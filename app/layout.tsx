@@ -1,10 +1,10 @@
 import './globals.css';
-import { store } from './GlobalRedux/store';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Providers } from './GlobalRedux/provider';
 const inter = Inter({ subsets: ['latin'] });
 import Navbar from '../components/navigation';
+import Init from '../components/Init';
 export const metadata: Metadata = {
   title: 'The Chef App',
   description: 'Best app to manage stock in kitchens',
@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+          <Init />
           <Navbar />
           {children}
         </Providers>

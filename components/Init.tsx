@@ -1,16 +1,19 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+'use client';
 import { useSelector } from 'react-redux';
-import { RootState } from './GlobalRedux/store';
-import { sendUserData } from './GlobalRedux/Recipes/recipes-actions';
-import { fetchUserData } from './GlobalRedux/Recipes/recipes-actions';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchUserData } from '../app/api/recipes/newRecipe';
+import { sendUserData } from '../app/api/recipes/newRecipe';
+import { RootState } from '../app/GlobalRedux/store';
 let isInitial = true;
-function App() {
+
+function Init() {
   const dispatch = useDispatch();
-  const state = useSelector((state: RootState) => state.recipes);
   const recipes = useSelector((state: RootState) => state.recipes.recipes);
+  const state = useSelector((state: RootState) => state.recipes);
   const order = useSelector((state: RootState) => state.recipes.order);
 
+  // Fetch user data
   useEffect(() => {
     dispatch<any>(fetchUserData());
   }, [dispatch]);
@@ -33,7 +36,6 @@ function App() {
       clearTimeout(sendDataDelay);
     };
   }, [order, state]);
-
   return '';
 }
-export default App;
+export default Init;
