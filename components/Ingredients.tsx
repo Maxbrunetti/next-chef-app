@@ -14,9 +14,9 @@ function Ingredients() {
     (state: RootState) => state.recipes.lists[currentList],
   );
   const desktopScreen = 768;
-  const windowWidth = 400;
-  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
 
   const [touchStart, setTouchStart] = useState(0);
   const [touchMove, setTouchMove] = useState(0);
@@ -62,62 +62,62 @@ function Ingredients() {
       // Mobile
       for (const key in ingredientsList) {
         // eslint-disable-next-line no-prototype-builtins
-        // if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
-        ingredients.push(
-          <div className={styles.orderContainer} key={key}>
-            <div className={styles.ingredientContainer}>
-              <p className={styles.ingredientName}>{key}</p>
-              <input
-                className={styles.ingredientQuantity}
-                key={key}
-                id={key}
-                value={order[list][key] + 'kg'}
-                onTouchStart={(e) => setTouchStart(e.touches[0].clientY)}
-                onTouchMove={(e) => {
-                  setTouchMove(e.touches[0].clientY);
-                  changeInputValue(e, key);
-                }}
-                onChange={(e) => e}
-              />
-            </div>
-          </div>,
-        );
+        if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
+          ingredients.push(
+            <div className={styles.orderContainer} key={key}>
+              <div className={styles.ingredientContainer}>
+                <p className={styles.ingredientName}>{key}</p>
+                <input
+                  className={styles.ingredientQuantity}
+                  key={key}
+                  id={key}
+                  value={order[list][key] + 'kg'}
+                  onTouchStart={(e) => setTouchStart(e.touches[0].clientY)}
+                  onTouchMove={(e) => {
+                    setTouchMove(e.touches[0].clientY);
+                    changeInputValue(e, key);
+                  }}
+                  onChange={(e) => e}
+                />
+              </div>
+            </div>,
+          );
+        }
       }
-      // }
     } else {
       // Desktop
       for (const key in ingredientsList) {
         // eslint-disable-next-line no-prototype-builtins
-        // if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
-        ingredients.push(
-          <div className={styles.orderContainer} key={key}>
-            <div className={styles.ingredientContainer}>
-              <p className={styles.ingredientName}>{key}</p>
-              <input
-                className={styles.ingredientQuantity}
-                key={key}
-                id={key}
-                min={0}
-                type="number"
-                value={order[list][key]}
-                onChange={(e) => {
-                  console.log(+e.target.value);
-                  dispatch(
-                    recipesActions.updateOrder<any>({
-                      list: list,
-                      ingredient: key,
-                      newValue: +e.target.value,
-                    }),
-                  );
-                }}
-              />
-              <div className="unit">
-                <p>kg</p>
+        if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
+          ingredients.push(
+            <div className={styles.orderContainer} key={key}>
+              <div className={styles.ingredientContainer}>
+                <p className={styles.ingredientName}>{key}</p>
+                <input
+                  className={styles.ingredientQuantity}
+                  key={key}
+                  id={key}
+                  min={0}
+                  type="number"
+                  value={order[list][key]}
+                  onChange={(e) => {
+                    console.log(+e.target.value);
+                    dispatch(
+                      recipesActions.updateOrder<any>({
+                        list: list,
+                        ingredient: key,
+                        newValue: +e.target.value,
+                      }),
+                    );
+                  }}
+                />
+                <div className="unit">
+                  <p>kg</p>
+                </div>
               </div>
-            </div>
-          </div>,
-        );
-        // }
+            </div>,
+          );
+        }
       }
     }
     ingredients.sort((a: any, b: any) => (a.key > b.key ? 1 : -1));
