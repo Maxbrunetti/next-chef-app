@@ -7,8 +7,6 @@ import Ingredients from '../../../components/Ingredients';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../GlobalRedux/store';
 import { recipesActions } from '../../GlobalRedux/Recipes/recipes-slice';
-import { useEffect } from 'react';
-import { sendUserData } from '../../api/recipes/newRecipe';
 
 function Order() {
   const order = useSelector((state: RootState) => state.recipes.order);

@@ -60,7 +60,7 @@ function Ingredients() {
     if (windowWidth < desktopScreen) {
       // Mobile
       for (const key in ingredientsList) {
-        if (ingredientsList.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
           ingredients.push(
             <div className={styles.orderContainer} key={key}>
               <div className={styles.ingredientContainer}>
@@ -85,7 +85,7 @@ function Ingredients() {
     } else {
       // Desktop
       for (const key in ingredientsList) {
-        if (ingredientsList.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(ingredientsList, key)) {
           ingredients.push(
             <div className={styles.orderContainer} key={key}>
               <div className={styles.ingredientContainer}>

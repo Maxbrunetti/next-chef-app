@@ -1,12 +1,8 @@
 'use client';
 
 import { Provider } from 'react-redux';
-import { RootState, store } from './store';
+import { store } from './store';
 import { ReactNode } from 'react';
-import { useEffect } from 'react';
-import { sendUserData } from './Recipes/recipes-actions';
-import { useDispatch } from 'react-redux';
-import { fetchUserData } from './Recipes/recipes-actions';
 
 type LayoutProps = {
   children: ReactNode;
