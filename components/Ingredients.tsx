@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../app/GlobalRedux/store';
 import { recipesActions } from '../app/GlobalRedux/Recipes/recipes-slice';
@@ -15,11 +15,16 @@ function Ingredients() {
   );
   const desktopScreen = 768;
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
-
+  const [windowWidth, setWindowWidth] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchMove, setTouchMove] = useState(0);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   function changeInputValue(e: any, key: string) {
     const ingredient = key;
