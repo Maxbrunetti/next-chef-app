@@ -7,7 +7,7 @@ import {
   Recipe,
   recipesActions,
 } from '../../GlobalRedux/Recipes/recipes-slice';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector } from 'react-redux';
 
 function Recipes() {
   const dispatch = useDispatch();

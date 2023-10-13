@@ -2,11 +2,11 @@
 
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { ReactNode } from 'react';
+// import { ReactNode } from 'react';
 
-type LayoutProps = {
-  children: ReactNode;
-};
+// type LayoutProps = {
+//   children: ReactNode;
+// };
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return <Provider store={store}>{children}</Provider>;

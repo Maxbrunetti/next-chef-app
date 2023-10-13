@@ -36,6 +36,6 @@ function Init() {
       clearTimeout(sendDataDelay);
     };
   }, [order, state]);
-  return '';
+  return <></>;
 }
 export default Init;

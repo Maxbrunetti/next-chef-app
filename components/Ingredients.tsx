@@ -14,8 +14,9 @@ function Ingredients() {
     (state: RootState) => state.recipes.lists[currentList],
   );
   const desktopScreen = 768;
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
+  const windowWidth = 400;
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
 
   const [touchStart, setTouchStart] = useState(0);
   const [touchMove, setTouchMove] = useState(0);
