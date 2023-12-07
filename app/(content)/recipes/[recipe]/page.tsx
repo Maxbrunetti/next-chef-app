@@ -55,14 +55,14 @@ function RecipeSelected() {
         <p className={styles.details}>Portions: {currentRecipe.portions}</p>
         <div className={styles.instructions}>
           <h2>Ingredients</h2>
-          <ul>{ingredientsList || ''}</ul>
+          <ul>{ingredientsList || 'N/A'}</ul>
           <h2>Instructions</h2>
-          <p>{currentRecipe.instructions || ''}</p>
+          <p>{currentRecipe.instructions || 'N/A'}</p>
           <h2>Allergens</h2>
           <ul>
             {currentRecipe.allergens
               ? currentRecipe.allergens.map((el) => <li key={el}>{el}</li>)
-              : ''}
+              : 'N/A'}
           </ul>
         </div>
         <div className="containerBtnDelete">

@@ -50,8 +50,15 @@
   touch-action: none;
 }
 .vegetables {
-  background: url('./../../../public/assets/vegetables.jpg') center right repeat;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url('./../../../public/assets/vegetables.jpg') center/cover
+    no-repeat;
 }
+
 .vegetables::before {
   content: '';
   position: absolute;
@@ -61,13 +68,18 @@
   width: 100%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.6),
-    rgba(175, 255, 168, 0.9)
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
   );
 }
 
 .meat {
-  background: url('./../../../public/assets/meat.jpg') center center repeat;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url('./../../../public/assets/meat.jpg') center/cover no-repeat;
 }
 .meat::before {
   content: '';
@@ -78,13 +90,18 @@
   width: 100%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.6),
-    rgba(255, 184, 184, 0.9)
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
   );
 }
 
 .fish {
-  background: url('./../../../public/assets/fish.jpg') center center repeat;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url('./../../../public/assets/fish.jpg') center/cover no-repeat;
 }
 
 .fish::before {
@@ -96,12 +113,17 @@
   width: 100%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.6),
-    rgba(184, 219, 255, 0.8)
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
   );
 }
 .spices {
-  background: url('./../../../public/assets/spices.jpg') center center repeat;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url('./../../../public/assets/spices.jpg') center/cover no-repeat;
 }
 
 .spices::before {
@@ -113,12 +135,17 @@
   width: 100%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.6),
-    rgba(255, 248, 184, 0.8)
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
   );
 }
 .misc {
-  background: url('./../../../public/assets/misc.jpg') center center repeat;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url('./../../../public/assets/misc.jpg') center/cover no-repeat;
 }
 
 .misc::before {
@@ -131,7 +158,7 @@
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.9),
-    rgba(0, 0, 0, 0.1)
+    rgba(255, 255, 255, 0.7)
   );
 }
 

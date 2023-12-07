@@ -26,6 +26,7 @@ li {
 
 h1 {
   font-size: 4.209rem;
+  margin-top: 2rem;
 }
 
 h2 {
@@ -71,7 +72,7 @@ select:focus {
 }
 
 .btnBottom {
-  width: 50vw;
+  width: 49vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   bottom: 0;
