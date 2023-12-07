@@ -116,7 +116,7 @@ function Ingredients() {
                     );
                   }}
                 />
-                <div className="unit">
+                <div className={styles.unit}>
                   <p>kg</p>
                 </div>
               </div>

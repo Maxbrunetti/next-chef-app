@@ -79,10 +79,10 @@ select:focus {
 
 .containerBtnDelete {
   position: fixed;
-  width: 100%;
   bottom: 7rem;
-  display: flex;
+  left: calc(50% - (146.48px / 2));
   justify-content: center;
+  z-index: 1;
 }
 
 .btn:visited {
