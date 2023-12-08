@@ -128,7 +128,7 @@
 
 .recipeSelected .instructions {
   text-align: left;
-  padding: 2rem 2rem;
+  padding: 2rem 0;
   white-space: pre-line;
 }
 
