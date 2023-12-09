@@ -55,12 +55,20 @@ function Order() {
   }
 
   return (
-    <section className={styles[list]}>
+    <section className={`${styles[list]} listContainer`}>
       <Ingredients />
+      <div className="spacer"></div>
       <div className="containerBtn">
         <button className="btn btnBottom" onClick={copyList}>
           Copy
         </button>
+        <Popup
+          trigger={<button className={'btn btnBottom btnDelete'}>Clear</button>}
+          modal
+          nested
+        >
+          {popupBody}
+        </Popup>
         <button
           className="btn btnBottom"
           onClick={() => {
@@ -69,15 +77,6 @@ function Order() {
         >
           Next List
         </button>
-      </div>
-      <div className="containerBtnDelete">
-        <Popup
-          trigger={<button className={'btn btnDelete'}>Clear Order</button>}
-          modal
-          nested
-        >
-          {popupBody}
-        </Popup>
       </div>
     </section>
   );

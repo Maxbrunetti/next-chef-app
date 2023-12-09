@@ -77,16 +77,16 @@ select:focus {
 .btnBottom {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  width: 50%;
 }
 .containerBtn {
-  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
   justify-content: center;
-}
-
-.containerBtnDelete {
-  display: flex;
-  justify-content: center;
+  z-index: 3;
 }
 
 .btn:visited {
