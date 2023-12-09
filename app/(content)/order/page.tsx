@@ -57,19 +57,19 @@ function Order() {
   return (
     <section className={styles[list]}>
       <Ingredients />
-
-      <button className="btn btnBottom" onClick={copyList}>
-        Copy
-      </button>
-      <button
-        className="btn btnBottom"
-        onClick={() => {
-          dispatch(recipesActions.changeList());
-        }}
-      >
-        Next List
-      </button>
-
+      <div className="containerBtn">
+        <button className="btn btnBottom" onClick={copyList}>
+          Copy
+        </button>
+        <button
+          className="btn btnBottom"
+          onClick={() => {
+            dispatch(recipesActions.changeList());
+          }}
+        >
+          Next List
+        </button>
+      </div>
       <div className="containerBtnDelete">
         <Popup
           trigger={<button className={'btn btnDelete'}>Clear Order</button>}

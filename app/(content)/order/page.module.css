@@ -52,7 +52,7 @@
 .vegetables {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: url('./../../../public/assets/vegetables.jpg') center/cover
@@ -76,7 +76,7 @@
 .meat {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: url('./../../../public/assets/meat.jpg') center/cover no-repeat;
@@ -98,7 +98,7 @@
 .fish {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: url('./../../../public/assets/fish.jpg') center/cover no-repeat;
@@ -120,7 +120,7 @@
 .spices {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: url('./../../../public/assets/spices.jpg') center/cover no-repeat;
@@ -142,7 +142,7 @@
 .misc {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: url('./../../../public/assets/misc.jpg') center/cover no-repeat;

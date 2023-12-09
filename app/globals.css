@@ -77,9 +77,11 @@ select:focus {
 .btnBottom {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  bottom: 0;
   width: 50%;
-  z-index: 2;
+}
+.containerBtn {
+  display: flex;
+  justify-content: center;
 }
 
 .containerBtnDelete {
