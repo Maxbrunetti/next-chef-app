@@ -21,6 +21,7 @@ import {
 } from '../../../GlobalRedux/Recipes/recipes-slice';
 import { RootState } from '../../../GlobalRedux/store';
 import { Checkbox } from '@nextui-org/checkbox';
+import formatIngredients from '../../../../utils/formatIngredients';
 function AddRecipes() {
   const router = useRouter();
   const recipes = useSelector((state: RootState) => state.recipes.recipes);
@@ -53,7 +54,8 @@ function AddRecipes() {
 
   function onSubmit() {
     dispatch(recipesActions.addRecipe<any>(recipeForm));
-
+    console.log(recipeForm);
+    formatIngredients(recipeForm);
     router.push('/recipes');
   }
 

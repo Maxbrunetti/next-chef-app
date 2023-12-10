@@ -65,25 +65,23 @@ function RecipeSelected() {
               : 'N/A'}
           </ul>
         </div>
-        <div className={styles.btnContainer}>
+        <div className={`containerBtn`}>
           <button className="btn btnBottom" onClick={() => router.back()}>
             Back
           </button>
+          <Popup
+            trigger={<button className="btn btnDelete">Delete</button>}
+            modal
+            nested
+          >
+            {popupBody}
+          </Popup>
           <button
             className="btn btnBottom"
             onClick={() => router.push('/recipes/editrecipe')}
           >
             Edit
           </button>
-        </div>
-        <div className="containerBtnDelete">
-          <Popup
-            trigger={<button className="btn btnDelete">Delete Recipe</button>}
-            modal
-            nested
-          >
-            {popupBody}
-          </Popup>
         </div>
       </section>
     );
