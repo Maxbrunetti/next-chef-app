@@ -23,6 +23,7 @@ import {
 } from '../../../GlobalRedux/Recipes/recipes-slice';
 import { useEffect } from 'react';
 import { RootState } from '../../../GlobalRedux/store';
+import formatedRecipe from '../../../../utils/formatRecipe';
 
 function EditRecipe() {
   const recipeSelected = useSelector(
@@ -65,12 +66,7 @@ function EditRecipe() {
   } = useForm({ shouldUnregister: false });
 
   function onSubmit() {
-    dispatch(
-      recipesActions.editRecipe<any>({
-        recipeName: recipeSelected,
-        recipe: recipeForm,
-      }),
-    );
+    dispatch(recipesActions.editRecipe<any>(formatedRecipe(recipeForm)));
     router.push('/recipes');
   }
 

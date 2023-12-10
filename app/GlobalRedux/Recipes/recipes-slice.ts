@@ -70,10 +70,11 @@ const recipesSlice = createSlice({
       const recipeIndex = state.recipes.findIndex(
         (recipe: Recipe) => recipe.name === action.payload.recipeName,
       );
-      const updatedRecipe = action.payload.recipe;
+      const updatedRecipe = action.payload;
       state.recipes[recipeIndex] = updatedRecipe;
       state.ingredients = updateUserIngredients(state.recipes);
       state.order = convertArrayIntoKeyValue(state.ingredients);
+      state.recipeSelected = '';
     },
     deleteRecipe(state: any, action: any) {
       const recipeIndex = state.recipes.findIndex(
