@@ -26,6 +26,7 @@ import { RootState } from '../../../GlobalRedux/store';
 import formatedRecipe from '../../../../utils/formatRecipe';
 
 function EditRecipe() {
+  const router = useRouter();
   const recipeSelected = useSelector(
     (state: RootState) => state.recipes.recipeSelected,
   );
@@ -42,7 +43,6 @@ function EditRecipe() {
     'Vegetarian',
     'Vegan',
   ];
-  const router = useRouter();
   const [recipeForm, setRecipeForm] = useState<Recipe>({
     name: '',
     type: '',
@@ -142,28 +142,29 @@ function EditRecipe() {
         isInvalid={Boolean(errors.recipeName)}
         className={styles.formGroup}
       >
-        <FormLabel htmlFor="recipeName">Recipe Name</FormLabel>
+        <FormLabel htmlFor="recipeName" className={styles.label}>
+          Recipe Name
+        </FormLabel>
         <Input
           id="recipeName"
+          value={recipeForm.name}
           {...register('recipeName', {
             minLength: { value: 3, message: 'Minimum length should be 3' },
             validate: {
               uniqueName: (value) => {
                 if (value === recipeSelected) return true;
-
-                return (
-                  !recipes
-                    .map((recipe) => recipe.name.toLowerCase())
-                    .includes(value.toLowerCase()) ||
-                  'Recipe name must be unique'
-                );
+                else
+                  return (
+                    !recipes.map((recipe) => recipe.name).includes(value) ||
+                    'Recipe name must be unique'
+                  );
               },
             },
           })}
-          value={recipeForm.name}
-          onChange={(e) =>
-            setRecipeForm({ ...recipeForm, name: e.target.value })
-          }
+          onChange={(e) => {
+            setRecipeForm({ ...recipeForm, name: e.target.value });
+            console.log(recipeForm.name);
+          }}
         />
         <FormErrorMessage className={styles.errorMessage}>
           {/* {errors.recipeName && errors.recipeName.message} */}

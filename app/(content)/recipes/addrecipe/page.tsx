@@ -26,14 +26,6 @@ function AddRecipes() {
   const router = useRouter();
   const recipes = useSelector((state: RootState) => state.recipes.recipes);
   const dispatch = useDispatch();
-  const [recipeForm, setRecipeForm] = useState<Recipe>({
-    name: '',
-    type: '',
-    portions: 1,
-    ingredients: [{ ingredient: '', weight: 0, list: '' }],
-    instructions: '',
-    allergens: [],
-  });
 
   const allergensTypes = [
     'Diary',
@@ -45,6 +37,14 @@ function AddRecipes() {
     'Vegetarian',
     'Vegan',
   ];
+  const [recipeForm, setRecipeForm] = useState<Recipe>({
+    name: '',
+    type: '',
+    portions: 1,
+    ingredients: [{ ingredient: '', weight: 0, list: '' }],
+    instructions: '',
+    allergens: [],
+  });
 
   const {
     handleSubmit,
@@ -53,8 +53,8 @@ function AddRecipes() {
   } = useForm();
 
   function onSubmit() {
-    dispatch(recipesActions.addRecipe<any>(formatedRecipe(recipeForm)));
     console.log(recipeForm);
+    dispatch(recipesActions.addRecipe<any>(formatedRecipe(recipeForm)));
     router.push('/recipes');
   }
 
@@ -141,9 +141,7 @@ function AddRecipes() {
             minLength: { value: 3, message: 'Minimum length should be 3' },
             validate: {
               uniqueName: (value) =>
-                !recipes
-                  .map((recipe: Recipe) => recipe.name.toLowerCase())
-                  .includes(value.toLowerCase()) ||
+                !recipes.map((recipe: Recipe) => recipe.name).includes(value) ||
                 'Recipe name must be unique',
             },
           })}
