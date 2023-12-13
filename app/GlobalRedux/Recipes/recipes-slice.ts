@@ -1,7 +1,9 @@
 'use client';
+
 import { createSlice } from '@reduxjs/toolkit';
 import updateUserIngredients from '../../../utils/updateUserIngredients';
 import { convertArrayIntoKeyValue } from '../../../utils/convertArraysIntoKeyValue';
+// import { sendUserData } from './recipes-actions';
 import { sendUserData } from '../../api/recipes/newRecipe';
 export interface Ingredient {
   list: string;
@@ -74,7 +76,6 @@ const recipesSlice = createSlice({
       state.recipes[recipeIndex] = updatedRecipe;
       state.ingredients = updateUserIngredients(state.recipes);
       state.order = convertArrayIntoKeyValue(state.ingredients);
-      state.recipeSelected = '';
     },
     deleteRecipe(state: any, action: any) {
       const recipeIndex = state.recipes.findIndex(
@@ -83,7 +84,6 @@ const recipesSlice = createSlice({
       state.recipes.splice(recipeIndex, 1);
       state.ingredients = updateUserIngredients(state.recipes);
       state.order = convertArrayIntoKeyValue(state.ingredients);
-      state.recipeSelected = '';
     },
     selectRecipe(state: any, action: any) {
       state.recipeSelected = action.payload;
