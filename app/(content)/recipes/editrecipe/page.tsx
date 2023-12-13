@@ -56,7 +56,9 @@ function EditRecipe() {
     const [recipe] = recipes.filter(
       (recipe: Recipe) => recipe.name === recipeSelected,
     );
-    setRecipeForm(recipe);
+    if (recipe) {
+      setRecipeForm(recipe);
+    }
   }, [recipeSelected, recipes]);
 
   const {
@@ -66,8 +68,11 @@ function EditRecipe() {
   } = useForm({ shouldUnregister: false });
 
   function onSubmit() {
-    dispatch(recipesActions.editRecipe<any>(formatedRecipe(recipeForm)));
-    router.push('/recipes');
+    recipesActions.editRecipe<any>({
+      recipeName: recipeSelected,
+      recipe: recipeForm,
+    }),
+      router.push('/recipes');
   }
 
   function addIngredient() {
@@ -152,12 +157,12 @@ function EditRecipe() {
             minLength: { value: 3, message: 'Minimum length should be 3' },
             validate: {
               uniqueName: (value) => {
-                if (value === recipeSelected) return true;
-                else
-                  return (
-                    !recipes.map((recipe) => recipe.name).includes(value) ||
-                    'Recipe name must be unique'
-                  );
+                // if (value === recipeSelected) return true;
+                // else
+                return (
+                  !recipes.map((recipe) => recipe.name).includes(value) ||
+                  'Recipe name must be unique'
+                );
               },
             },
           })}

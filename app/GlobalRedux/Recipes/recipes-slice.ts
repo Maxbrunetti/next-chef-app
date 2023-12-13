@@ -70,7 +70,7 @@ const recipesSlice = createSlice({
       const recipeIndex = state.recipes.findIndex(
         (recipe: Recipe) => recipe.name === action.payload.recipeName,
       );
-      const updatedRecipe = action.payload;
+      const updatedRecipe = action.payload.recipe;
       state.recipes[recipeIndex] = updatedRecipe;
       state.ingredients = updateUserIngredients(state.recipes);
       state.order = convertArrayIntoKeyValue(state.ingredients);

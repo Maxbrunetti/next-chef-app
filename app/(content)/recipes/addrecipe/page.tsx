@@ -53,7 +53,6 @@ function AddRecipes() {
   } = useForm();
 
   function onSubmit() {
-    console.log(recipeForm);
     dispatch(recipesActions.addRecipe<any>(formatedRecipe(recipeForm)));
     router.push('/recipes');
   }
