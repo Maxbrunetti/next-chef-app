@@ -122,6 +122,7 @@ select:focus {
   text-align: center;
   gap: 3rem;
   background: #ccc;
+  border: 1px solid black;
   border-radius: 1rem;
 }
 .confirmDeleteContainer div {

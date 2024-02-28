@@ -114,6 +114,11 @@ const recipesSlice = createSlice({
     clearOrder(state: any) {
       state.order = convertArrayIntoKeyValue(state.ingredients);
     },
+    addList(state: any, action: any) {
+      const newList = action.payload;
+      console.log(newList);
+      state.lists = [...state.lists, newList];
+    },
   },
 });
 export const recipesActions = recipesSlice.actions;

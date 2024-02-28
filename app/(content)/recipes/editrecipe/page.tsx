@@ -262,7 +262,6 @@ function EditRecipe() {
       <Button
         onClick={() => {
           addIngredient();
-          console.log(recipeForm);
         }}
         className="btn"
         style={{ margin: 0 }}

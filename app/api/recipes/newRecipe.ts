@@ -32,7 +32,6 @@ export function fetchUserData() {
 
     try {
       const userData = await fetchData();
-      console.log(userData);
       dispatch(
         recipesActions.updateUser({
           recipes: userData.recipes || [],

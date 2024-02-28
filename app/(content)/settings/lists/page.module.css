@@ -1,0 +1,13 @@
+.listSection {
+  padding: 6rem 0 0;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border: 1px solid black;
+}
+
+.newList {
+}

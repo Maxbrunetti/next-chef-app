@@ -22,7 +22,7 @@ function RecipeSelected() {
   }
 
   const popupBody: any = (close: () => void) => (
-    <div className={styles.confirmDeleteContainer}>
+    <div className={'confirmDeleteContainer'}>
       <p style={{ fontWeight: 600 }}>
         Are you sure you want to delete this recipe?
       </p>
