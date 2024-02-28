@@ -84,6 +84,7 @@ const recipesSlice = createSlice({
       state.recipes.splice(recipeIndex, 1);
       state.ingredients = updateUserIngredients(state.recipes);
       state.order = convertArrayIntoKeyValue(state.ingredients);
+      state.recipeSelected = '';
     },
     selectRecipe(state: any, action: any) {
       state.recipeSelected = action.payload;

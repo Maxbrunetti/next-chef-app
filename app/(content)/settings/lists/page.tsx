@@ -17,6 +17,7 @@ function Lists() {
       {lists.map((list) => (
         <div className={styles.list}>
           <p>{list}</p>
+          <button className="deleteList">Delete</button>
         </div>
       ))}
       <div className={styles.list}>
