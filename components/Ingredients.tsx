@@ -128,7 +128,7 @@ function Ingredients() {
     ingredients.sort((a: any, b: any) => (a.key > b.key ? 1 : -1));
     return ingredients;
   }
-
+  if (!order) return <></>;
   return <>{displayIngredients(order[list])}</>;
 }
 
