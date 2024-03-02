@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../GlobalRedux/store';
 import { recipesActions } from '../../../GlobalRedux/Recipes/recipes-slice';
-import { FormControl, FormLabel, Input } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
 import { useState } from 'react';
 
 function Lists() {
@@ -15,7 +15,7 @@ function Lists() {
   return (
     <section className={styles.listSection}>
       {lists.map((list) => (
-        <div className={styles.list}>
+        <div className={styles.list} key={list}>
           <p>{list}</p>
           <button
             className="deleteList"

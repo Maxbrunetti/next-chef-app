@@ -121,7 +121,6 @@ const recipesSlice = createSlice({
     },
 
     removeList(state: any, action: any) {
-      console.log(action.payload);
       const listIndex = state.lists.findIndex(
         (list: string) => list === action.payload,
       );
