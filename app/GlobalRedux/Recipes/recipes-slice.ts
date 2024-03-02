@@ -116,9 +116,16 @@ const recipesSlice = createSlice({
       state.order = convertArrayIntoKeyValue(state.ingredients);
     },
     addList(state: any, action: any) {
-      const newList = action.payload;
-      console.log(newList);
-      state.lists = [...state.lists, newList];
+      const newListName = action.payload;
+      state.lists = [...state.lists, newListName];
+    },
+
+    removeList(state: any, action: any) {
+      console.log(action.payload);
+      const listIndex = state.lists.findIndex(
+        (list: string) => list === action.payload,
+      );
+      state.lists.splice(listIndex, 1);
     },
   },
 });

@@ -17,7 +17,12 @@ function Lists() {
       {lists.map((list) => (
         <div className={styles.list}>
           <p>{list}</p>
-          <button className="deleteList">Delete</button>
+          <button
+            className="deleteList"
+            onClick={() => dispatch(recipesActions.removeList<any>(list))}
+          >
+            Delete
+          </button>
         </div>
       ))}
       <div className={styles.list}>
